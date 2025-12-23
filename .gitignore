@@ -1,0 +1,52 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.pdb
+*.exe
+!*.exe.config
+
+# Visual Studio
+.vs/
+*.vsidx
+*.vspscc
+*.vsscc
+*.vssettings
+*.vspx
+*.sap
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# IDE and Editor files
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Application specific
+*.log
+appsettings.Development.json
+appsettings.Production.json
