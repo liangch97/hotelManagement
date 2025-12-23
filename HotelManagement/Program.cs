@@ -551,10 +551,20 @@ namespace HotelManagement
                 }
 
                 Console.Write("Check-in Date (yyyy-mm-dd): ");
-                DateTime checkInDate = DateTime.Parse(Console.ReadLine() ?? DateTime.Now.ToString());
+                string? checkInInput = Console.ReadLine();
+                if (!DateTime.TryParse(checkInInput, out DateTime checkInDate))
+                {
+                    Console.WriteLine("Invalid date format. Please use yyyy-mm-dd format.");
+                    return;
+                }
 
                 Console.Write("Check-out Date (yyyy-mm-dd): ");
-                DateTime checkOutDate = DateTime.Parse(Console.ReadLine() ?? DateTime.Now.AddDays(1).ToString());
+                string? checkOutInput = Console.ReadLine();
+                if (!DateTime.TryParse(checkOutInput, out DateTime checkOutDate))
+                {
+                    Console.WriteLine("Invalid date format. Please use yyyy-mm-dd format.");
+                    return;
+                }
 
                 Console.Write("Special Requests (optional): ");
                 string? specialRequests = Console.ReadLine();

@@ -42,6 +42,12 @@ namespace HotelManagement.Services
 
         public int MakeReservation(int guestId, int roomId, DateTime checkInDate, DateTime checkOutDate, string? specialRequests = null)
         {
+            // Validate dates
+            if (checkOutDate <= checkInDate)
+            {
+                throw new InvalidOperationException("Check-out date must be after check-in date.");
+            }
+
             var room = _roomRepository.GetRoomById(roomId);
             if (room == null || room.Status != "Available")
             {
